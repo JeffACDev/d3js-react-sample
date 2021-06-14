@@ -46,7 +46,7 @@ const App = () => {
 
   useEffect(() => {
     changeData();
-    getFoodData({food:'cat ears'});
+    getFoodData({food:'apple'});
   }, []);
 
 console.log('food response=', foodData?.data?.foods);
@@ -55,9 +55,12 @@ console.log('foodData===', foodScore);
   return (
       <div className="App">
           <h2>Graphs with React</h2>
+          <p>This is a basic example of d3js with react</p>
           <button onClick={changeData}>Change Data</button>
-          <BarChart width={600} height={400} data={data} />   
-          <input type="search" placeholder="food search" onChange={(event)=>{
+          <BarChart width={600} height={400} data={data} />  
+          <h2>Food Score Comparison</h2> 
+          <p> This is a d3js bar chart of food scores from US Food Data Central that updates as you type in the search field, below. I will be adding more features and modification.</p>
+          <input type="search" placeholder="apple" onChange={(event)=>{
  getFoodData({food:event.target.value});
           }}></input>
           {foodScore && <BarChart width={600} height={400} data={foodScore} />    }       
